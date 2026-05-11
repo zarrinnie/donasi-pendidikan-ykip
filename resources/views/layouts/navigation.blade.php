@@ -10,7 +10,7 @@
     <div class="flex items-center">
         <!-- Settings Dropdown -->
         <div class="relative">
-            <x-dropdown align="right" width="48">
+            <x-dropdown allign="right" width="48">
                 <x-slot name="trigger">
                     <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none transition duration-150 ease-in-out gap-2">
                         <div class="w-8 h-8 rounded-full bg-[#D4A373] text-white flex items-center justify-center font-bold">
