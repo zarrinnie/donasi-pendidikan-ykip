@@ -28,12 +28,6 @@
 
         <div class="hidden md:flex flex-1 justify-center space-x-8 text-white font-medium text-sm md:text-base">
             
-            <!-- <a href="https://donasipendidikan.com/" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="hover:text-[#F3E5D8] transition-colors">
-                Home
-            </a> -->
             
             <a href="https://ykip.org/id/" 
             target="_blank" 

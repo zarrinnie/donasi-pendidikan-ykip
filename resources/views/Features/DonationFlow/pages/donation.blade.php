@@ -179,7 +179,7 @@
                         </p>
                         
                         <div class="mt-8 pt-6 border-t border-[#D2A770]/40 w-full text-left space-y-3 receipt-breakdown">
-                            <h4 class="text-xs tracking-wider uppercase font-bold text-[#4A2C11]/60 mb-2 text-center">Rincian Donasi</h4>
+                            <h3 class="text-xs tracking-wider uppercase font-bold text-[#4A2C11]/60 mb-2 text-center">Rincian Donasi</h3>
                             <div class="flex justify-between items-center text-sm font-medium">
                                 <span class="text-[#4A2C11]/80">Pilihan Nominal</span>
                                 <span id="display-amount" class="text-[#4A2C11]">Rp 50.000 <span class="text-xs text-[#4A2C11]/60">/bln</span></span>
