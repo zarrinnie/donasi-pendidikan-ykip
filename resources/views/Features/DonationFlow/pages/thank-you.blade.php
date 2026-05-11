@@ -3,40 +3,7 @@
 @section('content')
 
 @push('styles')
-<style>
-    /* ========================================== */
-    /* 1. GOPAY-STYLE SUCCESS ANIMATIONS          */
-    /* ========================================== */
-    @keyframes circlePop {
-        0% { transform: scale(0); opacity: 0; }
-        60% { transform: scale(1.1); opacity: 1; }
-        100% { transform: scale(1); opacity: 1; }
-    }
-    @keyframes drawCheck {
-        0% { stroke-dashoffset: 100; }
-        100% { stroke-dashoffset: 0; }
-    }
-    @keyframes contentFadeIn {
-        0% { opacity: 0; transform: translateY(20px); }
-        100% { opacity: 1; transform: translateY(0); }
-    }
-    
-    .animate-circle-pop { animation: circlePop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
-    .animate-draw-check { stroke-dasharray: 100; stroke-dashoffset: 100; animation: drawCheck 0.5s ease-out 0.4s forwards; }
-    .animate-fade-text { opacity: 0; animation: contentFadeIn 0.5s ease-out 0.8s forwards; }
 
-    /* ========================================== */
-    /* 2. FULL PAGE BOTTOM-TO-TOP ANIMATION       */
-    /* ========================================== */
-    @keyframes slideUpScreen {
-        0% { transform: translateY(100vh); opacity: 0; }
-        100% { transform: translateY(0); opacity: 1; }
-    }
-    .animate-screen-up {
-        /* This slides the entire container up from the bottom */
-        animation: slideUpScreen 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards; 
-    }
-</style>
 @endpush
 
 <div id="success-loader" class="fixed inset-0 z-50 flex items-center justify-center bg-[#FAF3E7] transition-opacity duration-500">
@@ -53,8 +20,7 @@
 
 <div id="main-content" class="relative w-full min-h-screen bg-[#FAF3E7] flex flex-col items-center justify-center py-20 z-10 overflow-hidden hidden">
     
-    <div class="absolute inset-0 w-full h-full bg-top bg-no-repeat pointer-events-none z-[-1]" 
-         style="background-image: url('{{ asset('donation-bg.jpg') }}'); background-size: cover;">
+    <div class="absolute inset-0 w-full h-full bg-top bg-no-repeat pointer-events-none z-[-1] bg-donation-bg">
     </div>
 
     <div class="max-w-3xl mx-auto px-4 text-center relative z-10 w-full">

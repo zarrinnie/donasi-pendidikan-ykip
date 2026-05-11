@@ -4,33 +4,12 @@
 
 @push('styles')
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-<style>
-    /* Unique, Elegant Entrance Animation for Modals */
-    @keyframes elegantSlideInRight {
-        0% { opacity: 0; transform: translateX(100px) scale(0.9) rotate(3deg); }
-        100% { opacity: 1; transform: translateX(0) scale(1) rotate(0deg); }
-    }
-    @keyframes elegantSlideOutRight {
-        0% { opacity: 1; transform: translateX(0) scale(1) rotate(0deg); }
-        100% { opacity: 0; transform: translateX(50px) scale(0.95) rotate(-2deg); }
-    }
-    .modal-animate-in { animation: elegantSlideInRight 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
-    .modal-animate-out { animation: elegantSlideOutRight 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
-
-    /* Ensure parent is relative and has no overflow-hidden for sticky card to work */
-    .sticky-context {
-        position: relative;
-        overflow: clip; 
-    }
-</style>
 @endpush
 
 <div class="relative w-full overflow-x-clip">
     
     <section class="relative min-h-screen flex flex-col justify-center overflow-hidden z-10 pt-20 lg:pt-0">
-        <div class="absolute inset-0 w-full h-full bg-top bg-no-repeat pointer-events-none z-[-1]" 
-             style="background-image: url('{{ asset('donation-bg.jpg') }}'); background-size: cover;">
+        <div class="absolute inset-0 w-full h-full bg-top bg-no-repeat pointer-events-none z-[-1] bg-donation-bg">
         </div>
 
         <div class="relative z-10 max-w-6xl mx-auto px-4 w-full">
@@ -55,8 +34,7 @@
 
     <section class="relative w-full min-h-screen bg-[#FAF3E7] flex flex-col justify-center py-16 lg:py-24 z-10 sticky-context">
         
-        <div class="absolute bottom-[-10%] left-1/2 transform -translate-x-1/2 w-[120%] md:w-[110%] h-[120%] bg-no-repeat bg-bottom bg-contain pointer-events-none z-0 opacity-10" 
-             style="background-image: url('{{ asset('coffee-order-form-graphic.png') }}');">
+        <div class="absolute bottom-[-10%] left-1/2 transform -translate-x-1/2 w-[120%] md:w-[110%] h-[120%] bg-no-repeat bg-bottom bg-contain pointer-events-none z-0 opacity-10 bg-coffee-order-form">
         </div>
 
         <div class="relative z-10 max-w-6xl mx-auto px-4 w-full">
@@ -249,10 +227,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         // Initialize AOS animations
-        AOS.init({
-            once: true,
-            offset: 50,
-        });
+        AOS.init({ once: true, offset: 50 });
 
         const tierBtns = document.querySelectorAll('.tier-btn');
         const freqBtns = document.querySelectorAll('.freq-btn');
@@ -266,14 +241,12 @@
         const displayFreq = document.getElementById('display-freq');
         const displayTotal = document.getElementById('display-total');
 
-        // Form & Confirmation Elements
         const donationForm = document.getElementById('donation-form');
         const confirmModal = document.getElementById('confirm-payment-modal');
         const confirmModalPanel = document.getElementById('confirm-modal-panel');
         const cancelPaymentBtn = document.getElementById('cancel-payment-btn');
         const confirmPaymentBtn = document.getElementById('confirm-payment-btn');
 
-        // Custom Amount Modal Elements
         const customModal = document.getElementById('custom-amount-modal');
         const modalPanel = document.getElementById('modal-panel');
         const customInput = document.getElementById('custom-amount-input');
@@ -285,7 +258,6 @@
         let currentFreq = '3 Bulan';
         let pendingCustomBtn = null;
 
-        // STRICT IMPACT MATRIX
         const impactMatrix = {
             '50000': {
                 '3 Bulan': { text: 'Satu pasang sepatu dan kaus kaki sekolah', icon: '👟' },
@@ -352,7 +324,6 @@
             activeBtn.classList.add('border-[#4A2C11]', 'bg-white', 'shadow-lg', 'scale-105', 'ring-4', 'ring-[#D2A770]/30');
         }
 
-        /* --- CUSTOM AMOUNT MODAL LOGIC --- */
         function openCustomModal() {
             customModal.classList.remove('hidden');
             customModal.classList.add('flex');
@@ -415,7 +386,6 @@
             closeCustomModal();
         });
 
-        /* --- FREQUENCY LOGIC --- */
         freqBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 freqBtns.forEach(b => {
@@ -431,7 +401,6 @@
             });
         });
 
-        /* --- PAYMENT CONFIRMATION MODAL LOGIC --- */
         function openConfirmModal() {
             confirmModal.classList.remove('hidden');
             confirmModal.classList.add('flex');
@@ -455,9 +424,8 @@
             }, 400); 
         }
 
-        // Intercept form submission
         donationForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Prevents instant submit so we can show the modal
+            e.preventDefault(); 
             openConfirmModal();
         });
 
@@ -465,15 +433,12 @@
         confirmModal.addEventListener('click', (e) => { if (e.target === confirmModal) closeConfirmModal(); });
 
         confirmPaymentBtn.addEventListener('click', () => {
-            // Show loading state on button
             confirmPaymentBtn.innerHTML = '<svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> <span class="ml-2">Memproses...</span>';
             confirmPaymentBtn.disabled = true;
             
-            // Programmatically submit the form (bypassing the event listener)
             HTMLFormElement.prototype.submit.call(donationForm);
         });
 
-        // Initialize
         updateImpactCard();
     });
 </script>

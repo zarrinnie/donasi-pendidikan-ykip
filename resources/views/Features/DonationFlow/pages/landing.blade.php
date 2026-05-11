@@ -2,17 +2,11 @@
 
 @section('content')
 
-<!-- ========================================== -->
-<!-- TOP HALF WRAPPER (Hero + Tentang Kami)     -->
-<!-- ========================================== -->
 <div class="relative w-full">
 
-    <!-- The Continuous Background Layer (Top Beans) -->
-    <div class="absolute inset-x-0 top-0 w-full h-[200vh] bg-top bg-no-repeat pointer-events-none z-0" 
-         style="background-image: url('{{ asset('landing-page-top-bg.jpg') }}'); background-size: 100% auto;">
+    <div class="absolute inset-x-0 top-0 w-full h-full bg-top bg-no-repeat pointer-events-none z-[-1] bg-landing-top">
     </div>
 
-    <!-- 1. HERO SECTION -->
     <section class="relative min-h-[calc(100vh-80px)] flex flex-col justify-center py-12 z-10">
         <div class="max-w-5xl mx-auto px-4 flex flex-col items-center w-full">
             
@@ -22,8 +16,6 @@
 
             <div class="relative w-full mt-4 md:mt-6">
                 
-                <!-- Second Line Title (Inside, White) -->
-                <!-- Scaled down to match, and pushed slightly further down from the top edge with top-5 md:top-8 -->
                 <h2 class="absolute top-5 md:top-4 left-0 right-0 text-center font-serif text-3xl md:text-[3.5rem] font-bold text-white tracking-wider uppercase z-20 drop-shadow-[0_4px_6px_rgba(0,0,0,0.8)] leading-tight">
                     Sebuah Harapan
                 </h2>
@@ -42,13 +34,10 @@
         </div>
     </section>
 
-    <!-- 2. TENTANG KAMI SECTION -->
     <section class="relative min-h-screen flex flex-col justify-center py-12 z-10">
         <div class="max-w-5xl mx-auto px-4 w-full">
-            <!-- Main Card Wrapper -->
             <div class="relative bg-[#FCF9F5] rounded-[3rem] p-8 md:p-16 shadow-lg border border-[#EBE3D9] flex flex-col md:flex-row gap-12 items-center text-left">
                 
-                <!-- Full Text Content Restored -->
                 <div class="w-full md:w-1/2 space-y-6 z-10 pr-0 md:pr-4">
                     <h2 class="font-serif text-3xl md:text-4xl font-bold text-[#4A2C11]">Tentang Kami</h2>
                     <p class="text-[#4A2C11] leading-relaxed text-sm md:text-[15px] font-medium text-justify">
@@ -63,7 +52,6 @@
                     </a>
                 </div>
                 
-                <!-- Side Image with its own aesthetic border/frame -->
                 <div class="w-full md:w-1/2 z-10 relative">
                     <div class="p-2 border-2 border-[#D2A770]/30 rounded-[2.5rem]">
                         <img src="{{ asset('tentang.jpg') }}" 
@@ -72,7 +60,6 @@
                     </div>
                 </div>
 
-                <!-- Floating Coffee Cup Graphic -->
                 <img src="{{ asset('tentang-kami-coffee.png') }}" 
                      alt="Coffee Cup Graphic" 
                      class="absolute -bottom-10 -right-6 w-32 h-32 drop-shadow-2xl md:-bottom-16 md:-right-12 md:w-52 md:h-52 z-20">
@@ -80,21 +67,14 @@
         </div>
     </section>
 
-</div> <!-- End of Top Half Wrapper -->
+</div>
 
 
-<!-- ========================================== -->
-<!-- BOTTOM HALF (Mengapa Donasi)               -->
-<!-- ========================================== -->
-<!-- Added pb-32 so the button doesn't sit directly on top of the darkest part of the drawings -->
 <section id="about" class="relative min-h-screen flex flex-col justify-center py-12 pb-32">    
-    <!-- The Bottom Coffee Cups Background Layer -->
-    <!-- 'bottom-0' and 'bg-bottom' anchor this perfectly so the footer cuts it off cleanly -->
-    <div class="absolute inset-x-0 bottom-0 w-full h-[70%] bg-bottom bg-no-repeat pointer-events-none z-0" 
-         style="background-image: url('{{ asset('bottom-cups.png') }}'); background-size: 100% auto;">
+    
+    <div class="absolute inset-x-0 bottom-0 w-full h-[70%] bg-bottom bg-no-repeat pointer-events-none z-[-1] bg-bottom-cups">
     </div>
 
-    <!-- The Text Content (z-10 keeps it above the drawings) -->
     <div class="max-w-4xl mx-auto px-4 text-center space-y-8 w-full relative z-10">
         
         <h2 class="font-serif text-3xl md:text-4xl font-bold text-[#4A2C11] leading-snug tracking-wider uppercase">
@@ -116,5 +96,14 @@
         </div>
     </div>
 </section>
+
+@push('scripts')
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        AOS.init({ once: true, offset: 50, duration: 800 });
+    });
+</script>
+@endpush
 
 @endsection

@@ -14,13 +14,8 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-        <style>
-            .bg-beans-pattern {
-                background-image: url('data:image/svg+xml;utf8,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><path d="M30 15c-8.284 0-15 6.716-15 15s6.716 15 15 15 15-6.716 15-15-6.716-15-15-15zm0 28c-7.18 0-13-5.82-13-13S22.82 17 30 17s13 5.82 13-13-5.82 13-13 13zm-1-19v12h2V24h-2z" fill="%23e8e4db" fill-opacity="0.4" fill-rule="evenodd"/></svg>');
-            }
-        </style>
     </head>
-    <body class="font-sans text-gray-900 antialiased" style="font-family: 'Inter', sans-serif;">
+    <body class="font-sans text-gray-900 antialiased font-inter-custom">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-[#FDFBF7] bg-beans-pattern">
 
             <div class="mb-8 text-center flex flex-col items-center">

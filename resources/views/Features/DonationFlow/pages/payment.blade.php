@@ -4,25 +4,9 @@
 
 @push('styles')
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-<style>
-    /* Elegant Center Pop Animation for the Modal */
-    @keyframes elegantPopIn {
-        0% { opacity: 0; transform: scale(0.9) translateY(20px); }
-        100% { opacity: 1; transform: scale(1) translateY(0); }
-    }
-    @keyframes elegantPopOut {
-        0% { opacity: 1; transform: scale(1) translateY(0); }
-        100% { opacity: 0; transform: scale(0.95) translateY(10px); }
-    }
-    
-    .modal-pop-in { animation: elegantPopIn 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
-    .modal-pop-out { animation: elegantPopOut 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
-</style>
 @endpush
 
-<div class="min-h-screen bg-[#EBE3D9] py-16 relative overflow-hidden flex items-center justify-center"
-     style="background-image: url('{{ asset('payment-pattern.png') }}'); background-size: cover; background-position: center; background-blend-mode: multiply;">
+<div class="min-h-screen bg-[#EBE3D9] py-16 relative overflow-hidden flex items-center justify-center bg-payment-pattern">
     
     <div class="max-w-5xl w-full mx-auto px-4 flex flex-col md:flex-row items-center md:items-stretch justify-center gap-10 md:gap-14 relative z-10">
         
@@ -169,7 +153,7 @@
             }
         });
 
-        // Confirm Button - Redirects to Receipt
+        // Confirm Button - Redirects to Receipt/Thank You page
         btnConfirm.addEventListener('click', () => {
             // Give visual feedback that it's loading
             btnConfirm.innerHTML = `
@@ -178,7 +162,7 @@
             `;
             btnConfirm.disabled = true;
 
-            // Redirect to the success/receipt page
+            // Redirect to the success page
             window.location.href = "{{ route('donation.receipt', $donation->id) }}";
         });
     });

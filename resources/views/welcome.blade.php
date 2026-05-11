@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="relative w-full h-[80vh] min-h-[600px] flex items-center">
-        <div class="absolute inset-0 bg-gray-600 bg-center bg-cover" style="background-image: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-gray-600 bg-center bg-cover bg-welcome-hero">
             <div class="absolute inset-0 bg-black/30"></div>
         </div>
 
@@ -35,7 +35,7 @@
                         Didirikan pada 2002 sebagai respons terhadap Bom Bali I, Yayasan Kemanusiaan Ibu Pertiwi (YKIP) berfokus pada peningkatan akses pendidikan bagi anak-anak kurang mampu. Melalui berbagai program beasiswa dari tingkat SD hingga perguruan tinggi, YKIP kini menjangkau siswa di lima kabupaten dan satu kota di Bali, dengan tujuan meningkatkan kualitas hidup melalui pendidikan.
                     </p>
                 </div>
-                <div class="h-64 lg:h-full w-full min-h-[300px] bg-gray-300 rounded-lg lg:rounded-none bg-cover bg-center gsap-reveal" style="background-image: url('https://images.unsplash.com/photo-1593113580332-ce288f615462?q=80&w=2070&auto=format&fit=crop');">
+                <div class="h-64 lg:h-full w-full min-h-[300px] bg-gray-300 rounded-lg lg:rounded-none bg-cover bg-center gsap-reveal bg-welcome-about">
                 </div>
             </div>
         </div>
@@ -90,11 +90,11 @@
             
             <div class="grid md:grid-cols-2 gap-8">
                 <a href="#" class="group block overflow-hidden rounded-sm gsap-reveal">
-                    <div class="h-64 lg:h-80 w-full bg-gray-300 bg-cover bg-center transition duration-500 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1529390079861-591de354faf5?q=80&w=2070&auto=format&fit=crop');"></div>
+                    <div class="h-64 lg:h-80 w-full bg-gray-300 bg-cover bg-center transition duration-500 group-hover:scale-105 bg-welcome-news-1"></div>
                 </a>
                 
                 <a href="#" class="group block overflow-hidden rounded-sm gsap-reveal">
-                    <div class="h-64 lg:h-80 w-full bg-gray-300 bg-cover bg-center transition duration-500 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=2070&auto=format&fit=crop');"></div>
+                    <div class="h-64 lg:h-80 w-full bg-gray-300 bg-cover bg-center transition duration-500 group-hover:scale-105 bg-welcome-news-2"></div>
                 </a>
             </div>
         </div>

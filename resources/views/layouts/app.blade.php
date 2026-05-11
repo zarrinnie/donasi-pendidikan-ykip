@@ -14,7 +14,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased" style="font-family: 'Inter', sans-serif;">
+    <body class="font-sans antialiased font-inter-custom">
         <div class="flex h-screen bg-[#FDFBF7] overflow-hidden" x-data="{ sidebarOpen: false }">
             
             <!-- Sidebar -->
