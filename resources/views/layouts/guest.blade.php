@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>YKIP - Secangkir Kopi untuk Pendidikan</title>
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=inter:400,500,600|playfair-display:400,600,700" rel="stylesheet" />
+    <link href="https://fonts.bunny.net/css?family=inter:400,500,600" rel="stylesheet" />
     
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     
@@ -19,19 +19,30 @@
 <body class="antialiased bg-[#FDFBF7] text-gray-900 flex flex-col min-h-screen">
     
     <nav class="bg-[#9B663A] w-full px-6 py-2 flex items-center justify-between shadow-md sticky top-0 z-50">
+        
         <div class="w-32 flex-shrink-0 flex items-center">
-            <img src="{{ asset('logo-navbar.png') }}" alt="YKIP Logo" class="h-10 w-auto">
+            <a href="https://donasipendidikan.com/">
+                <img src="{{ asset('logo-navbar.png') }}" alt="YKIP Logo" class="h-10 w-auto">
+            </a>
         </div>
 
         <div class="hidden md:flex flex-1 justify-center space-x-8 text-white font-medium text-sm md:text-base">
-            <a href="http://localhost:8000/" class="hover:text-[#F3E5D8] transition-colors">Home</a>
+            
+            <!-- <a href="https://donasipendidikan.com/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="hover:text-[#F3E5D8] transition-colors">
+                Home
+            </a> -->
+            
             <a href="https://ykip.org/id/" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       class="hover:text-[#F3E5D8] transition-colors">
-                        Visit Us
-                    </a>
-            <a href="{{ url('/#about') }}" class="hover:text-[#F3E5D8] transition-colors">About</a>        
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="hover:text-[#F3E5D8] transition-colors">
+                Visit Us
+            </a>
+            
+            <a href="https://donasipendidikan.com/#about" class="hover:text-[#F3E5D8] transition-colors">About</a>        
         </div>
 
         <div class="w-32 flex justify-end flex-shrink-0">
