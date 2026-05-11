@@ -30,7 +30,6 @@
 
 
             <a href="https://donasipendidikan.com"
-            target="_blank"
             rel="noopener noreferrer"
             class="hover:text-[#F3E5D8] transition-colors">
                 Home
