@@ -74,7 +74,7 @@
                         <div class="bg-[#C99856] p-2 rounded-full flex-shrink-0"><svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg></div>
                         <div>
                             <p class="font-bold text-white mb-1">Phone</p>
-                            <p class="text-gray-300">011-534-8798-6556</p>
+                            <p class="text-gray-300">+6281337746494</p>
                         </div>
                     </div>
                 </div>
